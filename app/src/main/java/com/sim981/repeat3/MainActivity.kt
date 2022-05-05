@@ -1,5 +1,6 @@
 package com.sim981.repeat3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.sim981.repeat3.adapters.intentAdapter
@@ -25,5 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         mIntentAdapter = intentAdapter(this,R.layout.intent_list_item, mIntentList)
         intentListView.adapter = mIntentAdapter
+
+        intentListView.setOnItemClickListener { adapterView, view, i, l ->
+            val goIntent = Intent(this, DetailActivity::class.java)
+            goIntent.putExtra("namePackage",mIntentList[i].itemName)
+                .putExtra("nickPackage",mIntentList[i].itemNick)
+                .putExtra("numPackage", mIntentList[i].itemNumber)
+                .putExtra("addrPackage", mIntentList[i].itemAddr)
+            startActivity(goIntent)
+        }
     }
 }
