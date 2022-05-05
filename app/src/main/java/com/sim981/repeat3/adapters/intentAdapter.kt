@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.sim981.repeat3.R
 import com.sim981.repeat3.models.intentListData
+import java.text.DecimalFormat
 
 class intentAdapter (
     val iContext : Context,
@@ -19,6 +21,19 @@ class intentAdapter (
             iTempRow = LayoutInflater.from(iContext).inflate(R.layout.intent_list_item, null)
         }
         var iRow = iTempRow!!
+
+        val iNameTxt = iRow.findViewById<TextView>(R.id.nameItemTxt)
+        val iNickTxt = iRow.findViewById<TextView>(R.id.nickItemTxt)
+        val iNumTxt = iRow.findViewById<TextView>(R.id.numItemTxt)
+        val iAddrTxt = iRow.findViewById<TextView>(R.id.addrItemTxt)
+
+        val decimal = DecimalFormat("##,###")
+        val resultNum = decimal.format(iList[position].itemNumber)
+
+        iNameTxt.text = iList[position].itemName
+        iNickTxt.text = iList[position].itemNick
+        iNumTxt.text = iList[position].itemNumber.toString()
+        iAddrTxt.text = iList[position].itemAddr
 
         return iRow
     }

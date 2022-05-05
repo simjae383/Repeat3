@@ -6,48 +6,52 @@
 
     <ImageView
         android:id="@+id/fruitImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/apple"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:orientation="vertical"
         android:layout_weight="1"
         android:gravity="center">
 
         <TextView
+            android:id="@+id/nameItemTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="이름"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_marginBottom="15dp"
-            android:textSize="17sp"
+            android:layout_marginBottom="10dp"
+            android:textSize="16sp"
             />
         <TextView
+            android:id="@+id/nickItemTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="닉네임"
             android:textColor="@color/black"
-            android:layout_marginBottom="15dp"
-            android:textSize="17sp"
+            android:layout_marginBottom="10dp"
+            android:textSize="16sp"
             />
         <TextView
+            android:id="@+id/numItemTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="전화번호"
             android:textColor="@color/black"
-            android:layout_marginBottom="15dp"
-            android:textSize="17sp"
+            android:layout_marginBottom="10dp"
+            android:textSize="16sp"
             />
         <TextView
+            android:id="@+id/addrItemTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="거주지"
             android:textColor="@color/black"
-            android:textSize="17sp"
+            android:textSize="16sp"
             />
     </LinearLayout>
 </LinearLayout>
