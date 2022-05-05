@@ -32,7 +32,7 @@ class intentAdapter (
 
         iNameTxt.text = iList[position].itemName
         iNickTxt.text = iList[position].itemNick
-        iNumTxt.text = iList[position].itemNumber.toString()
+        iNumTxt.text = resultNum
         iAddrTxt.text = iList[position].itemAddr
 
         return iRow
