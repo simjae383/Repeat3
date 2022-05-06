@@ -15,18 +15,18 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val contextName = intent.getStringExtra("namePackage")
-        val contextNick = intent.getStringExtra("nickPackage")
-        val contextNum = intent.getIntExtra("numPackage")
-        val contextAddr = intent.getStringExtra("addrPackage")
+        val contextName = intent.getStringExtra("namePackage").toString()
+        val contextNick = intent.getStringExtra("nickPackage").toString()
+        val contextNum = intent.getStringExtra("numPackage").toString()
+        val contextAddr = intent.getStringExtra("addrPackage").toString()
 
-        mDetailList.add(detailListData(1, contextName.toString()))
-        mDetailList.add(detailListData(2, contextNick.toString()))
-        mDetailList.add(detailListData(3, contextNum.toString()))
-        mDetailList.add(detailListData(4, contextAddr.toString()))
+        mDetailList.add(detailListData(1, "contextName"))
+        mDetailList.add(detailListData(2, "contextNick"))
+        mDetailList.add(detailListData(3, "contextNum"))
+        mDetailList.add(detailListData(4, "contextAddr"))
 
-        mDetailAdapter = detailAdapter(this,R.layout.detail_list_item,detailListData)
-        detailListView.adapter = detailAdapter
+        mDetailAdapter = detailAdapter(this,R.layout.detail_list_item,mDetailList)
+        detailListView.adapter = mDetailAdapter
 
     }
 }

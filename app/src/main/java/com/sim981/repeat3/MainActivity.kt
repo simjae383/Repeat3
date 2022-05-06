@@ -29,10 +29,15 @@ class MainActivity : AppCompatActivity() {
 
         intentListView.setOnItemClickListener { adapterView, view, i, l ->
             val goIntent = Intent(this, DetailActivity::class.java)
-            goIntent.putExtra("namePackage",mIntentList[i].itemName)
-                .putExtra("nickPackage",mIntentList[i].itemNick)
-                .putExtra("numPackage", mIntentList[i].itemNumber)
-                .putExtra("addrPackage", mIntentList[i].itemAddr)
+            val namePackage : String = mIntentList[i].itemName
+            val nickPackage : String = mIntentList[i].itemNick
+            val numPackage : String = mIntentList[i].itemNumber.toString()
+            val addrPackage : String = mIntentList[i].itemAddr
+
+            goIntent.putExtra("namePackage",namePackage)
+                .putExtra("nickPackage", nickPackage)
+                .putExtra("numPackage", numPackage)
+                .putExtra("addrPackage", addrPackage)
             startActivity(goIntent)
         }
     }

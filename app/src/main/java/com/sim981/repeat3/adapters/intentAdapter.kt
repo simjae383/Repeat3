@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.sim981.repeat3.R
 import com.sim981.repeat3.models.intentListData
-import java.text.DecimalFormat
 
 class intentAdapter (
     val iContext : Context,
@@ -27,12 +26,9 @@ class intentAdapter (
         val iNumTxt = iRow.findViewById<TextView>(R.id.numItemTxt)
         val iAddrTxt = iRow.findViewById<TextView>(R.id.addrItemTxt)
 
-        val decimal = DecimalFormat("##,###")
-        val resultNum = decimal.format(iList[position].itemNumber)
-
         iNameTxt.text = iList[position].itemName
         iNickTxt.text = iList[position].itemNick
-        iNumTxt.text = resultNum
+        iNumTxt.text = iList[position].itemNumber.toString()
         iAddrTxt.text = iList[position].itemAddr
 
         return iRow
