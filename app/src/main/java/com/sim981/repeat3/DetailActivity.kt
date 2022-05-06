@@ -20,10 +20,10 @@ class DetailActivity : AppCompatActivity() {
         val contextNum = intent.getStringExtra("numPackage").toString()
         val contextAddr = intent.getStringExtra("addrPackage").toString()
 
-        mDetailList.add(detailListData(1, "contextName"))
-        mDetailList.add(detailListData(2, "contextNick"))
-        mDetailList.add(detailListData(3, "contextNum"))
-        mDetailList.add(detailListData(4, "contextAddr"))
+        mDetailList.add(detailListData(1, contextName))
+        mDetailList.add(detailListData(2, contextNick))
+        mDetailList.add(detailListData(3, contextNum))
+        mDetailList.add(detailListData(4, contextAddr))
 
         mDetailAdapter = detailAdapter(this,R.layout.detail_list_item,mDetailList)
         detailListView.adapter = mDetailAdapter

@@ -22,7 +22,7 @@ class detailAdapter (
         var dRow = dTempRow!!
 
         val detailNum = dRow.findViewById<TextView>(R.id.listNumTxt)
-        val detailTxt = dRow.findViewById<TextView>(R.id.nameItemTxt)
+        val detailTxt = dRow.findViewById<TextView>(R.id.listItemTxt)
 
         detailNum.text = dList[position].detailNum.toString()
         detailTxt.text = dList[position].detailItem
